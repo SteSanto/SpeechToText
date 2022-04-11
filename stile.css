@@ -1,0 +1,32 @@
+
+#nascosto{
+    display: block;
+    width:40%;
+    height:200px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow:scroll;
+    margin-left: 22%;
+    padding: 0.5%;
+    
+}
+.editable:empty:before {
+    content: attr(data-placeholder);
+}
+#containerTextArea{
+    width: 50%;
+    margin-left: 22%;
+    
+
+}
+
+/*navbar*/
+
+
+
+
+
+
+
+
+
