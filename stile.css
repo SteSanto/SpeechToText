@@ -1,27 +1,94 @@
+/*navbar*/
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+    
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
 
+#logo{
+    width: 40px; 
+    height: 40px;
+   
+    margin-top: -25%;
+   
+}  
+
+#textSpeech{
+    margin-top: 2%;
+}
+#aboutus{
+    margin-top: 5%;
+}
+/*div textarea*/
 #nascosto{
     display: block;
     width:40%;
     height:200px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    overflow:scroll;
-    margin-left: 22%;
-    padding: 0.5%;
+    overflow: auto;
+    margin: auto;
+    padding: 1%;
+    background-color: #fff;
     
 }
 .editable:empty:before {
     content: attr(data-placeholder);
 }
-#containerTextArea{
-    width: 50%;
-    margin-left: 22%;
-    
+/*tool textarea*/
+#tool{
+    margin: auto;
+width: 20%;
 
+padding: 10px;
+}
+.boldstyle{
+    font-weight: bold;
+}
+.edit{
+    width:20px ;
+    height:20px ;
 }
 
-/*navbar*/
+/*All*/
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #f6f6f6; /* Green */
+    
+  }
+  .bg-2 { 
+    background-color: #1abc9c; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 
+
+ 
 
 
 

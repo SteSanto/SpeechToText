@@ -43,7 +43,7 @@
         function stoppa () {  
             recognition.stop();
         }
-          
+
 
 //  Create pdf
 
@@ -158,17 +158,22 @@ function createDocx(){
 
 //textarea editing
 function textCopy(){
-  var range = document.createRange();
- range.selectNode(document.getElementById("nascosto"));
- window.getSelection().removeAllRanges(); // clear current selection
- window.getSelection().addRange(range); // to select text
- document.execCommand("copy");
- window.getSelection().removeAllRanges();// to deselect
+  var copyText = document.getElementById("nascosto").innerHTML;
+  navigator.clipboard.writeText(copyText);
 }
 
 function textDelete(){
   document.getElementById("nascosto").innerHTML=null;
-  console.log("provo a eliminare");
+  
+
+}
+
+function textBold(){
+ 
+  
+  var element = document.getElementById("nascosto");
+  element.classList.toggle("boldstyle");
+  
 
 }
 
