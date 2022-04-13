@@ -115,11 +115,11 @@ function createPdf() {
 
 function createDocx(){
     
-    console.log("bottone premuto");
+    
   
+    var testo=document.getElementById("paragrafo").innerHTML;
     
-    
-        var testo=document.getElementById("paragrafo").innerHTML;
+       
   
         const documento = new docx.Document({
           
