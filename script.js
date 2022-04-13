@@ -10,13 +10,16 @@
     
         recognition.lang = "it";
         recognition.continuous = true;
+        recognition.interimResults=true;
+        var finalTranscript="";
+        var interimTranscript="";
         recognition.onresult = function (event) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 
-                
+             
                 var parola=event.results[i][0].transcript;
-               
+
                 if(parola==" punto"){
                     document.getElementById("paragrafo").innerHTML+=".";
                 }
@@ -28,17 +31,28 @@
                 }
                 else if(parola==" punto e virgola"){
                   document.getElementById("paragrafo").innerHTML+=";";
-              }
+                }
+                
                 else{
                     document.getElementById("paragrafo").innerHTML+=parola;
-                   
+                    //aggiornamento cursore creando un range di selezione del div
+                    const el = document.getElementById("paragrafo");
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    selection.removeAllRanges();
+                    range.selectNodeContents(el);
+                    range.collapse(false);
+                    selection.addRange(range);
+                    el.focus();
                     
                 }
             }
+            
            
             
             
         }
+        
         };
         function inizia(){
             recognition.start();
@@ -53,9 +67,7 @@ function loadAudioFile(e) {
   const url = URL.createObjectURL(e.files[0]);
   document.getElementById("audioplay").setAttribute("src", url);
 }
-function startrecording() {
-  inizia();
-}
+  
 
 //  Create pdf
 
