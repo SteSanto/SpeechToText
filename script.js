@@ -10,9 +10,6 @@
     
         recognition.lang = "it";
         recognition.continuous = true;
-        recognition.interimResults=true;
-        var finalTranscript="";
-        var interimTranscript="";
         recognition.onresult = function (event) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
@@ -36,7 +33,14 @@
                 else{
                     document.getElementById("paragrafo").innerHTML+=parola;
                     //aggiornamento cursore creando un range di selezione del div
-                  
+                    const el = document.getElementById("paragrafo");
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    selection.removeAllRanges();
+                    range.selectNodeContents(el);
+                    range.collapse(false);
+                    selection.addRange(range);
+                    el.focus();
                     
                 }
             }
