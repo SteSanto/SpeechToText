@@ -36,14 +36,7 @@
                 else{
                     document.getElementById("paragrafo").innerHTML+=parola;
                     //aggiornamento cursore creando un range di selezione del div
-                    const el = document.getElementById("paragrafo");
-                    const selection = window.getSelection();
-                    const range = document.createRange();
-                    selection.removeAllRanges();
-                    range.selectNodeContents(el);
-                    range.collapse(false);
-                    selection.addRange(range);
-                    el.focus();
+                  
                     
                 }
             }
