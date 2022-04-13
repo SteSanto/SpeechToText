@@ -27,7 +27,7 @@
    
 
   </head>
-  <body id="corpo" >
+  <body id="corpo" data-spy="scroll" data-target=".navbar" data-offset="60">
 	
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -43,9 +43,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">SPEECH TO TEXT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#abus">ABOUT US</a></li>
+            <li><a href="#textsp">SPEECH TO TEXT</a></li>
+            <li><a href="#conts">CONTACT</a></li>
           </ul>
         </div>
       </div>
@@ -57,40 +57,49 @@
 
      <!--all-->
      <!-- First Container -->
+     <a name="abus"></a>
 <div id="aboutus"class="container-fluid bg-2 text-center">
   <h3 class="margin">What Am I?</h3>
+  
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
   <a href="#" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-search"></span> Search
   </a>
 </div>
      <!-- Second Container -->
-<div id="textSpeech" class="container-fluid bg-1 ">
+<div id="textSpeech" class="container-fluid bg-1">
+  <a name="textsp"></a>
   <button id="ciao"type="button" onclick="stoppa()" >Interrompi</button>
          <button id="ciao"type="button" onclick="inizia()" >Registra</button>
          
       
-      
-        <div id="tool">
+         
+        <div id="tool" >
           <button  id="copia" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img>Copy</button>
           <button id="elimina" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img>Delete</button>
           <button id="grassetto" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img>Bold</button>
           
         </div>
+        <div id="audiocontainer">
+        <input type="file" id="audio" name="audio" accept="audio/*" onchange="loadAudioFile(this)">
+        <audio id="audioplay" src=""controls oncanplay="startrecording()">
+            Your browser does not support the audio element.
+        </audio>
         
-     
-      
-      <div id="nascosto" class="editable" contentEditable="true" contenteditable data-placeholder="I tuoi appunti verranno trascritti qui..."></div>
+        </div>
+      <div id="paragrafo" class="editable" contentEditable="true" contenteditable data-placeholder="I tuoi appunti verranno trascritti qui..."></div>
      <br>
-     <button id="down" onclick="createPdf()" >Download Pdf</button>
-     <button id="downdocx" onclick="createDocx()" >Download Word</button>
+     <button id="down" class="btn btn-info" onclick="createPdf()" >Download Pdf</button>
+     <button id="downdocx" class="btn btn-info" onclick="createDocx()" >Download Word</button>
     
 </div>
 
 
 
+
 <!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
+<div id="contacts"class="container-fluid bg-3 text-center"> 
+  <a name="conts"></a>
   <h3 class="margin">Where To Find Me?</h3><br>
   <div class="row">
     <div class="col-sm-4">
@@ -110,7 +119,11 @@
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+  <div>Sito realizzato da: Stefano Santomauro <br>
+    <a id="foot" href="contatti.html" title="contatti">contatti</a></div>
+    <hr>
+    <div>2021 - All Right Reserved - ICT innovazione sociale, comunicazione e nuove tecnologie </div>
+    
 </footer>
 
       

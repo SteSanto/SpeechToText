@@ -12,6 +12,9 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+  .navbar-nav li a:active{
+    color: #1abc9c !important;
+  }
 
 #logo{
     width: 40px; 
@@ -28,17 +31,17 @@
     margin-top: 5%;
 }
 /*div textarea*/
-#nascosto{
+#paragrafo{
     display: block;
-    width:40%;
-    height:200px;
+    width:60%;
+    height:400px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     overflow: auto;
     margin: auto;
     padding: 1%;
     background-color: #fff;
-    
+        
 }
 .editable:empty:before {
     content: attr(data-placeholder);
@@ -59,6 +62,9 @@ padding: 10px;
 }
 
 /*All*/
+html{
+    scroll-behavior: smooth;
+}
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
@@ -86,6 +92,7 @@ body {
     padding-top: 70px;
     padding-bottom: 70px;
   }
+  
 
 
  

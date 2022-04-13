@@ -1,3 +1,4 @@
+
 //Javascript
 
 
@@ -17,16 +18,19 @@
                 var parola=event.results[i][0].transcript;
                
                 if(parola==" punto"){
-                    document.getElementById("nascosto").innerHTML+=".";
+                    document.getElementById("paragrafo").innerHTML+=".";
                 }
                 else if(parola==" virgola"){
-                    document.getElementById("nascosto").innerHTML+=",";
+                    document.getElementById("paragrafo").innerHTML+=",";
                 }
                 else if(parola==" due punti"){
-                    document.getElementById("nascosto").innerHTML+=":";
+                    document.getElementById("paragrafo").innerHTML+=":";
                 }
+                else if(parola==" punto e virgola"){
+                  document.getElementById("paragrafo").innerHTML+=";";
+              }
                 else{
-                    document.getElementById("nascosto").innerHTML+=parola;
+                    document.getElementById("paragrafo").innerHTML+=parola;
                    
                     
                 }
@@ -44,6 +48,14 @@
             recognition.stop();
         }
 
+// Select & Play Audio File
+function loadAudioFile(e) {
+  const url = URL.createObjectURL(e.files[0]);
+  document.getElementById("audioplay").setAttribute("src", url);
+}
+function startrecording() {
+  inizia();
+}
 
 //  Create pdf
 
@@ -52,7 +64,7 @@ function createPdf() {
     
 	var doc = new jsPDF();
     
-    var testo=document.getElementById("nascosto").innerHTML;
+    var testo=document.getElementById("paragrafo").innerHTML;
    
     //var result = testo.replace(/.{68}/g, '$&\n');
     
@@ -98,7 +110,7 @@ function createDocx(){
   
     
     
-        var testo=document.getElementById("nascosto").innerHTML;
+        var testo=document.getElementById("paragrafo").innerHTML;
   
         const documento = new docx.Document({
           
@@ -146,7 +158,7 @@ function createDocx(){
       // Used to export the file into a .docx file
       docx.Packer.toBlob(documento).then(blob => {
         
-        saveAs(blob, "example.docx");
+        saveAs(blob, "appunti.docx");
         
       });
   
@@ -158,12 +170,12 @@ function createDocx(){
 
 //textarea editing
 function textCopy(){
-  var copyText = document.getElementById("nascosto").innerHTML;
+  var copyText = document.getElementById("paragrafo").innerHTML;
   navigator.clipboard.writeText(copyText);
 }
 
 function textDelete(){
-  document.getElementById("nascosto").innerHTML=null;
+  document.getElementById("paragrafo").innerHTML=null;
   
 
 }
@@ -171,9 +183,10 @@ function textDelete(){
 function textBold(){
  
   
-  var element = document.getElementById("nascosto");
+  var element = document.getElementById("paragrafo");
   element.classList.toggle("boldstyle");
   
 
 }
+
 
