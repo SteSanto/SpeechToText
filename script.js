@@ -10,8 +10,11 @@
     
         recognition.lang = "it";
         recognition.continuous = true;
+        var conta=1;
         recognition.onresult = function (event) {
+          
         for (var i = event.resultIndex; i < event.results.length; ++i) {
+          
             if (event.results[i].isFinal) {
                 
              
@@ -51,12 +54,32 @@
         }
         
         };
+        recognition.onspeechend = function() {
+          recognition.stop();
+          document.getElementById("mic").src = "./images/recording1.png";
+        }
         function inizia(){
             recognition.start();
+            document.getElementById("mic").src = "./images/recording2.png";
         }
     
         function stoppa () {  
             recognition.stop();
+            document.getElementById("mic").src = "./images/recording1.png";
+        }
+
+        function cosaFare(){
+          
+          if(conta%2==0){
+            conta++;
+            stoppa();
+            
+          }
+          else{
+            conta++;
+            inizia();
+          }
+
         }
 
 // Select & Play Audio File
@@ -115,12 +138,13 @@ function createPdf() {
 
 function createDocx(){
     
-    
+    console.log("bottone premuto");
   
-    var testo=document.getElementById("paragrafo").innerHTML;
     
+        
+        var testo=document.getElementById("paragrafo").innerHTML;
        
-  
+       
         const documento = new docx.Document({
           
           sections: [{
@@ -173,6 +197,7 @@ function createDocx(){
   
   
   }
+  
 
 
 

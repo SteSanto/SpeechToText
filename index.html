@@ -70,28 +70,38 @@
      <!-- Second Container -->
 <div id="textSpeech" class="container-fluid bg-1">
   <a name="textsp"></a>
-  <button id="ciao"type="button" onclick="stoppa()" >Interrompi</button>
-         <button id="ciao"type="button" onclick="inizia()" >Registra</button>
-         
-      
-         
-        <div id="tool" >
-          <button  id="copia" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img>Copy</button>
-          <button id="elimina" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img>Delete</button>
-          <button id="grassetto" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img>Bold</button>
-          
-        </div>
-        <div id="audiocontainer">
+
+        <div id="audiocontainer" class=" col-sm-12 col-xs-12 " >
         <input type="file" id="audio" name="audio" accept="audio/*" onchange="loadAudioFile(this)">
         <audio id="audioplay" src=""controls autoplay oncanplay="inizia()">
             Your browser does not support the audio element.
         </audio>
-        
         </div>
-      <div id="paragrafo" class="editable" contentEditable="true" contenteditable data-placeholder="I tuoi appunti verranno trascritti qui..."></div>
-     <br>
+        <div id="tool" class="col-sm-12 col-xs-12 " >
+          <div class="col-sm-4 col-xs-4 ">
+          <button  id="copia" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img>Copy</button>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+          <button id="elimina" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img>Delete</button>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+          <button id="grassetto" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img>Bold</button>
+          </div>
+        </div>
+
+      <div class="col-sm-12 col-xs-12 ">
+        <div id="paragrafo" class="editable col-sm-8 col-xs-8" contentEditable="true" contenteditable data-placeholder="I tuoi appunti verranno trascritti qui..."></div>
+        <div id="startstop"class="col-sm-4 col-xs-4">
+          <button id="ciao"type="button" onclick="cosaFare()" ><img id="mic" class="recording" src="./images/recording1.png"></button>
+          
+        </div>   
+      </div>
+      
+      <br>
+      <div class="container-fluid col-sm-12 col-xs-12">
      <button id="down" class="btn btn-info" onclick="createPdf()" >Download Pdf</button>
      <button id="downdocx" class="btn btn-info" onclick="createDocx()" >Download Word</button>
+    </div>
     
 </div>
 
