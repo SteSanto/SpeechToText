@@ -57,15 +57,25 @@
         recognition.onspeechend = function() {
           recognition.stop();
           document.getElementById("mic").src = "./images/recording1.png";
+          var element=document.getElementById("recoff");
+          element.classList.remove("recon");
+          element.innerHTML="Tocca per avviare la registrazione";
         }
         function inizia(){
             recognition.start();
             document.getElementById("mic").src = "./images/recording2.png";
+            var element=document.getElementById("recoff");
+            element.classList.add("recon");
+            element.innerHTML="Registrazione In corso";
+
         }
     
         function stoppa () {  
             recognition.stop();
             document.getElementById("mic").src = "./images/recording1.png";
+            var element=document.getElementById("recoff");
+            element.classList.remove("recon");
+            element.innerHTML="Tocca per avviare la registrazione";
         }
 
         function cosaFare(){
