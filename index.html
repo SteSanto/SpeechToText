@@ -67,25 +67,21 @@
     <span class="glyphicon glyphicon-search"></span> Search
   </a>
 </div>
+<a name="textsp"></a>
      <!-- Second Container -->
 <div id="textSpeech" class="container-fluid bg-1">
-  <a name="textsp"></a>
+  
   <div id="container">
-        <div id="audiocontainer" class=" col-sm-12 col-xs-12 " >
-        <input type="file" id="audio" name="audio" accept="audio/*" onchange="loadAudioFile(this)">
-        <audio id="audioplay" src=""controls autoplay oncanplay="inizia()">
-            Your browser does not support the audio element.
-        </audio>
-        </div>
-        <div id="tool" class="col-sm-12 col-xs-12 " >
-          <div class="col-sm-4 col-xs-4 ">
-          <button  id="copia" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img>Copy</button>
+        
+        <div id="tools" class="col-sm-12 col-xs-12 " >
+          <div >
+          <button class="tool" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img><br>Copy</button>
           </div>
-          <div class="col-sm-4 col-xs-4">
-          <button id="elimina" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img>Delete</button>
+          <div >
+          <button class="tool" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img><br>Delete</button>
           </div>
-          <div class="col-sm-4 col-xs-4">
-          <button id="grassetto" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img>Bold</button>
+          <div >
+          <button class="tool" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img><br>Bold</button>
           </div>
         </div>
 
@@ -96,7 +92,13 @@
           <div id="recoff" class="">Tocca per avviare la registrazione</div>
         </div>   
       </div>
-      
+        
+      <div id="audiocontainer" class=" col-sm-12 col-xs-12 " >
+        <input type="file" id="audio" name="audio" accept="audio/*" onchange="loadAudioFile(this)">
+        <audio id="audioplay" src=""controls autoplay oncanplay="inizia()">
+            Your browser does not support the audio element.
+        </audio>
+        </div>
       <br>
       <div class="container-fluid col-sm-12 col-xs-12">
      <button id="down" class="btn btn-primary" onclick="createPdf()" >Download Pdf</button>
