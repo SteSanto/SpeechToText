@@ -209,11 +209,13 @@ function createDocx(){
   }
   
 
-
+  
 
 
 //textarea editing
 function textCopy(){
+  
+
   var copyText = document.getElementById("paragrafo").innerHTML;
   navigator.clipboard.writeText(copyText);
 }
