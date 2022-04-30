@@ -23,16 +23,30 @@
     margin-top: -25%;
    
 }  
+
 #stt{
   width: 300px;
   height:200px;
   margin-top: -5%;
 }
-
+#sttdiv{
+  float:left;
+  width: 40%;
+  margin-right: 5%;
+ 
+}
+h1{
+  letter-spacing: 1px;
+  
+     
+}
 #descrizione{
-  width:35%;
+  float: left;
   margin-top: 2%;
-  margin-left: 7%;
+  letter-spacing: 1px;
+  font-size: 16px;
+ 
+  
 }
 #textSpeech{
     margin-top: 2%;
@@ -70,6 +84,8 @@
     width: 70%;
     padding: 10px;
     margin-left: 1%;
+    
+    
 }
 .tool{
   float:left;
@@ -141,8 +157,13 @@ body {
   #container{
     margin-left: 15%;
   }
-  
-  
+  #audiocontainer{
+    margin-top: 3%;
+  }
+  .footinfo{
+    text-align: center;
+    float:left;
+  }
 
 
  

@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>                        
           </button>
           
-          <a class="navbar-brand" href="#"><img id="logo"src="./images/logo.png"></a>
+          <a class="navbar-brand" href="#" ><img id="logo" title="Home-Go Up"src="./images/logo2.png" onmouseover="logoGreen(this)" onmouseout="logoGrey(this)"></a>
        
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -60,10 +60,14 @@
      <!-- First Container -->
      <a name="abus"></a>
 <div id="aboutus"class="container-fluid bg-2 text-center">
-  <h1 class="margin">Cos'è Speech to Text</h1>
+  <h1 class="margin">SPEECH TO TEXT</h1>
   
-  <div id="sttdiv"class="col-sm-6 col-xs-6"><img id="stt" src="./images/stt.png"></img> </div>
-  <div id="descrizione" class="col-sm-6 col-xs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div> 
+  <div id="sttdiv"class="col-sm-6 col-xs-12"><img id="stt" src="./images/stt.png"></img> </div>
+  <div id="descrizione" class="col-sm-6 col-xs-12">
+    Speech to Text è un tool realizzato e pensato per gli studenti.<br> Attraverso il microfono del proprio dispositivo è possibile dettare a voce gli appnti che 
+    si desidera trascrivere per avere il tutto in un comodo formato digitale, scaricabile in estensione Docx o Pdf.<br>
+    Prova anche la modalità asincrona: ti basterà caricare un file audio e in automatico, mentre viene riprodotto, i tuoi appunti verranno convertiti.
+  </div> 
 </div>
 <a name="textsp"></a>
      <!-- Second Container -->
@@ -73,13 +77,13 @@
         
         <div id="tools" class="col-sm-12 col-xs-12 " >
           <div >
-          <button class="tool" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img><br>Copy</button>
+          <button class="tool btn btn-default" onclick="textCopy()" ><img class="edit" src="./images/copy.png"></img><br>Copy</button>
           </div>
           <div >
-          <button class="tool" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img><br>Delete</button>
+          <button class="tool btn btn-default" onclick="textDelete()" ><img class="edit" src="./images/delete.png"></img><br>Delete</button>
           </div>
           <div >
-          <button class="tool" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img><br>Bold</button>
+          <button class="tool btn btn-default" onclick="textBold()" ><img class="edit" src="./images/bold.png"></img><br>Bold</button>
           </div>
         </div>
 
@@ -90,12 +94,15 @@
           <div id="recoff" class="">Tocca per avviare la registrazione</div>
         </div>   
       </div>
-        
+       
       <div id="audiocontainer" class=" col-sm-12 col-xs-12 " >
-        <input type="file" id="audio" name="audio" accept="audio/*" onchange="loadAudioFile(this)">
+        
+        
+        <input type="file" id="audio" name="audio"  accept="audio/*" onchange="loadAudioFile(this)" >
         <audio id="audioplay" src=""controls autoplay oncanplay="inizia()">
             Your browser does not support the audio element.
         </audio>
+       
         </div>
       <br>
       <div class="container-fluid col-sm-12 col-xs-12">
@@ -111,10 +118,11 @@
 <!-- Third Container (Grid) -->
 <div id="contacts"class="container-fluid bg-3 text-center"> 
   <a name="conts"></a>
-  <h3 class="margin">Where To Find Me?</h3><br>
+  <h2 class="margin">Contatti</h2><br>
   <div class="row">
     <div class="col-sm-4">
-      <p id="cio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h3>Stefano Santomauro</h3>
+      <p>Sono uno studente del 3°anno di ICT, in procinto di laurearmi, </p>
       <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
     </div>
     <div class="col-sm-4"> 
@@ -130,11 +138,13 @@
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <div>Sito realizzato da: Stefano Santomauro <br>
-    <a id="foot" href="contatti.html" title="contatti">contatti</a></div>
-    <hr>
-    <div>2021 - All Right Reserved - ICT innovazione sociale, comunicazione e nuove tecnologie </div>
+  <div>Sito realizzato da: Stefano Santomauro<br>
     
+    <hr>
+  
+    <div class=" footinfo col-sm-6">2022 - ICT innovazione sociale, comunicazione e nuove tecnologie - Progetto Tesi </div>
+    <div class="footinfo col-sm-6">Relatore: Cristina Gena  </div>
+ 
 </footer>
 
       
