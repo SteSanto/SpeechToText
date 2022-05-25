@@ -150,7 +150,7 @@ function createDocx() {
 
   console.log("bottone premuto");
 
-
+  
 
   var testo = document.getElementById("paragrafo").innerHTML;
 
@@ -217,6 +217,9 @@ function textCopy() {
 
 
   var copyText = document.getElementById("paragrafo").innerHTML;
+  if(copyText.includes("&nbsp;")==true){
+    copyText.replace("&nbsp;"," ");
+  }
   navigator.clipboard.writeText(copyText);
 }
 
@@ -234,6 +237,11 @@ function textBold() {
 
 
 }
+
+
+
+
+
 //logochange color on hover
 function logoGreen(x){
   x.src="./images/logo3.png";

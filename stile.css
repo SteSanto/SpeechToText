@@ -36,7 +36,7 @@
  
 }
 h1{
-  letter-spacing: 1px;
+  letter-spacing: 5px;
   
      
 }
@@ -168,10 +168,49 @@ body {
 
  
 
+/*slidetext*/
 
 
 
-
-
+  .slider-wrapper {
+    font-size: 40px;
+    color:white;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider{
+    height: 50px;
+    padding-left:15px;
+    font-weight: bold;
+    overflow: hidden;
+    margin-top: -12px;
+  }
+  .slider div {
+    color:#fff;
+    height: 50px;
+    margin-bottom: 50px;
+   
+    padding: 2px 15px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .slider-text1 {
+    
+    animation: slide 9s linear infinite;
+    
+  }
+ 
+  
+  @keyframes slide {
+    0% {margin-top:-300px;}
+    5% {margin-top:-200px;}
+    33% {margin-top:-200px;}
+    38% {margin-top:-100px;}
+    66% {margin-top:-100px;}
+    71% {margin-top:0px;}
+    100% {margin-top:0px;}
+  }
 
 
