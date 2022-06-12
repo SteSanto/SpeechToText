@@ -5,12 +5,13 @@
 //  Speech recognition
 
 
-
-var recognition = new webkitSpeechRecognition();
+const SpeechRecognition= window.SpeechRecognition || webkitSpeechRecognition;
+var recognition = new SpeechRecognition();    //oppure =new webkitspeechrecognition() direttamente
 
 recognition.lang = "it";
 recognition.continuous = true;
-var conta = 1;
+
+var attivo = false;
 recognition.onresult = function (event) {
 
   for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -47,12 +48,7 @@ recognition.onresult = function (event) {
 
       }
     }
-
-
-
-
   }
-
 };
 recognition.onspeechend = function () {
   recognition.stop();
@@ -78,18 +74,15 @@ function stoppa() {
   element.innerHTML = "Tocca per avviare la registrazione";
 }
 //capire logica per iniziare o stoppare
-function cosaFare() {
-
-  if (conta % 2 == 0) {
-    conta++;
+function toDo() {
+  if (attivo) {
     stoppa();
-
+    attivo=false;
   }
   else {
-    conta++;
     inizia();
+    attivo=true;
   }
-
 }
 
 // Select & Play Audio File
@@ -102,41 +95,21 @@ function loadAudioFile(e) {
 //  Create pdf
 
 function createPdf() {
-
-
   var doc = new jsPDF();
-
   var testo = document.getElementById("paragrafo").innerHTML;
-
-  //var result = testo.replace(/.{68}/g, '$&\n');
-
   var margins = {
     top: 10,
     bottom: 10,
     left: 10,
     width: 195
   };
-
-
   doc.text("TRASCRIZIONE APPUNTI", 70, 50);
-
   doc.addPage();
-
-  //doc.text(result, 20,20);
-
   doc.fromHTML(
     testo,
     margins.left, margins.top, { "width": 195 }
   )
-
-
-
   doc.save("appunti.pdf");
-
-
-
-
-
   doc.setProperties({
     title: 'Appunti',
     subject: 'trascrizione appunti voce-testo',
@@ -147,23 +120,12 @@ function createPdf() {
 //create Docx
 
 function createDocx() {
-
   console.log("bottone premuto");
-
-  
-
   var testo = document.getElementById("paragrafo").innerHTML;
-
-
   const documento = new docx.Document({
-
     sections: [{
-
-
-
       children: [
         new docx.Paragraph({
-
           children: [
             new docx.TextRun({
               text: "TRASCRIZIONE APPUNTI",
@@ -172,39 +134,26 @@ function createDocx() {
               size: 36,
               border: "top",
               HorizontalPositionAlign: "CENTER"
-
-
-
-
             }),
-
           ],
         }),
-
         new docx.Paragraph({
           children: [
-
             new docx.TextRun({
               text: testo,
               font: "Calibri",
               size: 24,
               break: 1,
             }),
-
           ],
         }),
       ],
     }]
   });
-
-
   // Used to export the file into a .docx file
   docx.Packer.toBlob(documento).then(blob => {
-
     saveAs(blob, "appunti.docx");
-
   });
-
 
 }
 
